@@ -16,7 +16,8 @@ jobs:
     steps:
       - checkout
       # Run your orb's commands to validate them.
-      - vault-cli-orb/greet
+      - vault-cli-orb/vault-install
+
 workflows:
   test-deploy:
     jobs:

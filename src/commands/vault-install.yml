@@ -1,0 +1,13 @@
+description: >
+  This command verifies the downloaded vault cli latest amd64 binary and install it in ${HOME}/bin/.
+
+steps:
+  - run:
+      name: Import hashicorp pgp key
+      command: <<include(scripts/import-hashicorp-gpg.sh)>>
+  - run:
+      name: Download and verify vault binary
+      command: <<include(scripts/download-verify.sh)>>
+  - run:
+      name: Install vault binary
+      command: mv ./vault ${HOME}/bin/
